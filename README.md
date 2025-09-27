@@ -115,20 +115,10 @@ The final platform provides a seamless user experience. A guest user can visit t
 * **Real-Time Context & Summarization**: The final itinerary is checked against the **OpenWeatherMap API** to add warnings for outdoor activities on rainy days. The structured plan is sent instantly to the user via **WebSocket**, followed moments later by a fluent, engaging summary paragraph written by the **Gemma 3** model to explain the day's plan.
 
 ### Directory structure
-<div style="display: flex; justify-content: space-around; align-items: center;">
-  <div>
-    <h3>Backend</h3>
-    <img src="images/backendimg.png" alt="Backend" width="200"/>
-  </div>
-  <div>
-    <h3>Frontend</h3>
-    <img src="images/frontendimg.png" alt="Frontend" width="200"/>
-  </div>
-  <div>
-    <h3>Recommender</h3>
-    <img src="images/recommenderimg.png" alt="Recommender" width="200"/>
-  </div>
-</div>
+| Backend | Frontend | Recommender |
+|---------|---------|-------------|
+| ![Backend](images/backendimg.png) | ![Frontend](images/frontendimg.png) | ![Recommender](images/recommenderimg.png) |
+
 
 ### Mentor Feedback & Applied Changes
 
