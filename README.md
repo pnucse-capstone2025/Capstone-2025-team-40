@@ -158,6 +158,7 @@ To start the frontend development server, navigate to the frontend directory in 
 Running the Frontend
 
 ```bash
+npm install
 npm run dev
 ```
 
