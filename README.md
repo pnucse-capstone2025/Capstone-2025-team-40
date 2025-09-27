@@ -180,7 +180,7 @@ Run Recommender
     ```bash
     uvicorn app:app --port 7860
     ```
-    - The service will be available at **[http://localhost:7860](http://localhost:7860)**.
+    - The service will be available at http://localhost:7860
     - **Note:** The first launch is slower because it downloads a model from Hugging Face.
     - To stop the server, press `Ctrl+C`.
 
@@ -190,13 +190,47 @@ This project runs multiple services in Docker containers. Here are the ports the
 
 | Service | Port | Local URL |
 | :--- | :--- | :--- |
-| **Frontend** | `8080` | [http://localhost:8080](http://localhost:8080) |
-| **Backend** | `8000` | [http://localhost:8000](http://localhost:8000) |
+| **Frontend** | `8080` | `http://localhost:8080` |
+| **Backend** | `8000` | `http://localhost:8000`|
 | **Database (Postgres)** | `5432` | `localhost:5432` |
-| **Recomender** | `7860` | [`http://localhost:7860`](http://localhost:7860) |
+| **Recomender** | `7860` | `http://localhost:7860` |
 
 ### The dependencies are in the requirements.txt files
+
+---
 
 ## Video/Presentation Materials (소개 자료 및 시연 영상)
 
 [![영상 이름 (Video Title)](http://img.youtube.com/vi/gtBjCST874Q/0.jpg)](https://www.youtube.com/watch?v=gtBjCST874Q)
+
+---
+
+## Team Info (팀 구성)
+
+| Member | Role |
+| :--- | :--- |
+| **Sofi Nafikova** | System Architecture, Backend Module Design, Recommendation System Research & Implementation |
+| **Oripov Mirshod** | Core Backend Development, Database Implementation & Integration |
+| **Karimova Gavriella**| Frontend Development, UI/UX Design, backend integration |
+
+###Team Reflections
+
+### **Sofi Nafikova**
+> "Leading the architecture and recommendation system was a challenging yet rewarding experience. The pivot from a traditional ML model to a semantic search engine was a crucial decision that defined the project's success. It taught me the importance of adapting to new technologies and making bold architectural choices to mitigate risks and build a superior product."
+
+### **Oripov Mirshod**
+> "Implementing the core Django backend and integrating the database was a deep dive into building robust, scalable systems. Ensuring that the complex data models for trips, locations, and users were efficient and reliable formed the foundation of the entire application. This project solidified my skills in backend development and data management."
+
+### **Karimova Gavriella**
+> "My focus was on bridging the gap between our powerful backend and the end-user. Designing the UI/UX in Figma and bringing it to life with React was a fantastic challenge. The most rewarding part was integrating the real-time itinerary results via WebSockets, creating a dynamic and engaging experience for the user. As well backend integration helped me better my backend skills."
+
+---
+
+
+## 📚 References & Sources
+
+* **Sentence-Transformers**: [Semantic Search - Sentence Transformers Documentation](https://www.sbert.net/examples/sentence_transformer/applications/semantic-search/README.html).
+* **N. Reimers and I. Gurevych (2019)**: [Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks](https://arxiv.org/abs/1908.10084). *arXiv:1908.10084*.
+* **Pinecone**: [Introduction to Facebook AI Similarity Search (Faiss) Tutorial](https://www.pinecone.io/learn/series/faiss/faiss-tutorial/).
+* **Google Developers**: [CP-SAT Solver | OR-Tools](https://developers.google.com/optimization/cp/cp_solver).
+* **S. Ramírez**: [Tutorial - FastAPI Documentation](https://fastapi.tiangolo.com/tutorial/).
