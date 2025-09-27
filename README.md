@@ -213,7 +213,7 @@ This project runs multiple services in Docker containers. Here are the ports the
 | **Oripov Mirshod** | Core Backend Development, Database Implementation & Integration |
 | **Karimova Gavriella**| Frontend Development, UI/UX Design, backend integration |
 
-###Team Reflections
+### Team Reflections
 
 ### **Sofi Nafikova**
 > "Leading the architecture and recommendation system was a challenging yet rewarding experience. The pivot from a traditional ML model to a semantic search engine was a crucial decision that defined the project's success. It taught me the importance of adapting to new technologies and making bold architectural choices to mitigate risks and build a superior product."
