@@ -95,6 +95,35 @@ This is the live FastAPI microservice that generates itineraries.
 
 The final platform provides a seamless user experience. A guest user can visit the landing page and immediately generate an itinerary by providing a natural language query. Registered users gain access to a full dashboard where they can manage their profiles, create detailed travel journals with photo uploads, and write reviews. The system successfully generates high-quality, relevant, and logistically sound itineraries with an average latency of ~5-10 seconds.
 
+### Detailed Feature Descriptions
+
+#### Core User Platform (Django & React)
+
+* **Full Authentication System**: Provides a secure and complete user experience, including registration, **JWT-based login**, password management, and detailed user profiles. A full password reset flow allows users to receive a reset link via email.
+* **Travel Journals & Reviews**: Authenticated users can create, manage, and share personal travel journals complete with photo uploads. The platform also features a review system where users can leave public feedback, with permissions ensuring only the original author can edit or delete their own content.
+* **Guest User Experience**: The landing page is designed to engage users immediately, allowing guest users to try the core itinerary generation feature without needing to sign up, lowering the barrier to entry.
+
+#### AI-Powered Itinerary Engine (FastAPI)
+
+* **Semantic Query Understanding**: The engine moves beyond simple keywords to interpret the intent and ambiance of a user's free-text query. It uses **Sentence Transformers** to understand abstract concepts like "a quiet, cozy cafe to read a book".
+* **AI Data Enrichment**: In an offline process, the system uses the **Google Gemini API** to generate rich, descriptive paragraphs for each location. This creates a high-quality semantic target that captures the unique atmosphere of each place.
+* **High-Speed Semantic Search**: All location descriptions are converted into numerical vectors and indexed using **Facebook AI Similarity Search (FAISS)**. This enables near-instantaneous, meaning-based search over the entire database.
+* **Multi-Factor Reranking**: After retrieving initial candidates, the system re-ranks them using a sophisticated formula that prioritizes **geographic cohesion** (to create walkable itineraries), semantic similarity, and whether a location is currently open.
+* **Hybrid Itinerary Planner**: The system uses a dual-mode approach to build the final schedule.
+    * A fast **Beam Search** heuristic is the default planner for standard requests.
+    * If a "must-have" request is detected, it automatically switches to the powerful **Google OR-Tools (CP-SAT solver)** to mathematically guarantee the user's non-negotiable request is included in the plan.
+* **Real-Time Context & Summarization**: The final itinerary is checked against the **OpenWeatherMap API** to add warnings for outdoor activities on rainy days. The structured plan is sent instantly to the user via **WebSocket**, followed moments later by a fluent, engaging summary paragraph written by the **Gemma 3** model to explain the day's plan.
+
+### Directory structure
+### Backend
+![Project Logo](images/backendimg.png)
+
+### Frontend
+![Project Logo](images/frontendimg.png)
+
+### Recommender
+![Project Logo](images/recommenderimg.png)
+
 ### Mentor Feedback & Applied Changes
 
 The mentor's interim feedback was pivotal and drove a significant and beneficial architectural evolution for the project. The team directly addressed every piece of feedback, leading to a more robust, scalable, and trustworthy system.
@@ -117,4 +146,4 @@ The mentor's interim feedback was pivotal and drove a significant and beneficial
 * **Mentor's Feedback**: The project needed a clearer strategy for real-time implementation to ensure low latency, as well as measures to strengthen the system's trustworthiness for the end-user.
 * **Our Response**: The team designed a distinct offline/online processing architecture to achieve high performance. The online, real-time request flow (pictured below) leverages a pre-built, high-speed **FAISS index** for near-instantaneous candidate retrieval, forming a clear and effective strategy for low-latency performance. To build user trust, the system now provides transparent weather warnings and includes direct links to each location's official website and Naver Maps URL for easy verification.
 
-### Directory Structure
+## Installation/Run Guide (설치 및 실행 방법)
