@@ -199,4 +199,4 @@ This project runs multiple services in Docker containers. Here are the ports the
 
 ## Video/Presentation Materials (소개 자료 및 시연 영상)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gtBjCST874Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![영상 이름 (Video Title)](http://img.youtube.com/vi/gtBjCST874Q/0.jpg)](https://www.youtube.com/watch?v=gtBjCST874Q)
