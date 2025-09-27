@@ -143,15 +143,17 @@ The mentor's interim feedback was pivotal and drove a significant and beneficial
 * **Our Response**: The team designed a distinct offline/online processing architecture to achieve high performance. The online, real-time request flow (pictured below) leverages a pre-built, high-speed **FAISS index** for near-instantaneous candidate retrieval, forming a clear and effective strategy for low-latency performance. To build user trust, the system now provides transparent weather warnings and includes direct links to each location's official website and Naver Maps URL for easy verification.
 
 ## Installation/Run Guide (설치 및 실행 방법)
-To start the frontend development server, navigate to the frontend directory in your terminal and run the following command. The server will typically be available at http://localhost:3000 or a similar address.
+To start the frontend development server, navigate to the frontend directory in your terminal and run the following command.
+
+Running the Frontend
 
 ```bash
 npm run dev
 ```
 
-Follow these steps in order to set up the virtual environment and run the Django backend server. The server will usually start on http://localhost:8000.
+Follow these steps in order to set up the virtual environment and run the Django backend server.
 
-## ▶️ Running the Backend
+Running the Backend
 
 | Step | Action | Command |
 |:---|:---|:---|
@@ -160,3 +162,41 @@ Follow these steps in order to set up the virtual environment and run the Django
 | **3** | **Install Dependencies** | `pip install -r requirements.txt` |
 | **4** | **Apply Migrations** | `python manage.py makemigrations`<br>`python manage.py migrate` |
 | **5** | **Run Server** | `python manage.py runserver` |
+
+Run Recommender
+
+1.  **Set up the virtual environment and install dependencies:**
+    ```bash
+    python -m venv venv
+    # On macOS/Linux:
+    source venv/bin/activate
+    # On Windows:
+    # .\\venv\\Scripts\\activate
+
+    pip install -r requirements.txt
+    ```
+
+2.  **Run the server:**
+    ```bash
+    uvicorn app:app --port 7860
+    ```
+    - The service will be available at **[http://localhost:7860](http://localhost:7860)**.
+    - **Note:** The first launch is slower because it downloads a model from Hugging Face.
+    - To stop the server, press `Ctrl+C`.
+
+### Service Ports
+
+This project runs multiple services in Docker containers. Here are the ports they are mapped to on your local machine:
+
+| Service | Port | Local URL |
+| :--- | :--- | :--- |
+| **Frontend** | `8080` | [http://localhost:8080](http://localhost:8080) |
+| **Backend** | `8000` | [http://localhost:8000](http://localhost:8000) |
+| **Database (Postgres)** | `5432` | `localhost:5432` |
+| **Recomender** | `7860` | [`http://localhost:7860`](http://localhost:7860) |
+
+### The dependencies are in the requirements.txt files
+
+## Video/Presentation Materials (소개 자료 및 시연 영상)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gtBjCST874Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
