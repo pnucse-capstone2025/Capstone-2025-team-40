@@ -1,0 +1,66 @@
+# Virtual environment and VSC files
+venv
+.vscode
+
+# Environmental variables
+.env
+
+# Virtual environments
+env/
+.venv/
+venv/
+my_env/
+
+# Django and Python files
+__pycache__
+backend/__pycache__
+*.pyc
+.pytest_cache
+*.py[cod]
+*.pyo
+*.pyd
+
+# SQLite database
+*.sqlite3
+db.sqlite3
+
+media
+schema.json
+
+.DS_Store
+node_modules
+/dist
+dist
+
+# local env files
+.env.local
+.env.*.local
+
+# Environment variables
+.env
+.env.*
+!*.env.template  # keep templates
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.idea/
+
+# Django collected static/media
+staticfiles/
+media/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,237 +1,102 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/nRcUn8vA)
-# Template for Capstone
-이 레파지토리는 학생들이 캡스톤 프로젝트 결과물을 위한 레파지토리 생성시에 참고할 내용들을 담고 있습니다.
-1. 레파지토리 생성
-2. 레파지토리 구성
-3. 레파지토리 제출 
-4. README.md 가이드라인
-5. README.md 작성팁
+
+# AI-Powered Personalized Itinerary Generation Web Application
+
+[![PNU CSE](https://img.shields.io/badge/Pusan%20National%20Univ-CSE-blue)](https://cse.pusan.ac.kr/cse/index.do)
+[![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react)](https://reactjs.org/)
+[![Django](https://img.shields.io/badge/Django-5.0.2-092E20?logo=django)](https://www.djangoproject.com/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110.0-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
+
+An intelligent travel planning assistant that generates personalized, adaptive, and logistically sound itineraries based on natural language queries. This project moves beyond generic "Top 10" lists to create truly unique travel experiences.
 
 ---
 
-## 1. 레파지토리 생성
-- [https://classroom.github.com/a/nRcUn8vA](https://classroom.github.com/a/nRcUn8vA)
-- 위 Github Classroom 링크에 접속해 본인 조의 github 레파지토리를 생성하세요.
+## 📖 Background (프로젝트 배경)
 
-<img width="700" alt="깃헙 클래스룸 레포 생성" src="https://github.com/user-attachments/assets/34ca1f43-c2cd-4880-a39e-0dafd889c35f" />
+### Market Situation & Problem Statement
 
-- 레포지토리 생성 시 팀명은 `TEAM-{조 번호}` 형식으로 생성하세요.
-- 예를 들어, 2025년도 3조의 팀명은 `TEAM-03` 입니다.
-- 이 경우 `Capstone2025-team-03`이란 이름으로 레파지토리가 생성됩니다.
+Traditional travel planning is often a frustrating and inefficient process. Existing platforms like TripAdvisor or Expedia typically provide static, one-size-fits-all recommendations that fail to consider a user's unique preferences, real-time conditions like weather, or logistical coherence. This leads to common problems:
 
----
+* [cite_start]**Information Overload**: Users must manually sift through hundreds of generic reviews to find places that match a specific vibe (e.g., a "quiet, cozy cafe").
+* [cite_start]**Manual Curation Burden**: Users are responsible for the difficult initial discovery phase of finding a set of activities that are not only interesting but also located conveniently near each other.
+* **Lack of Context**: Recommendations are often static and unaware of dynamic factors. [cite_start]A platform might suggest an outdoor park during a rainstorm or fail to mention a limited-time local festival.
 
-## 2. 레파지토리 구성
-- 레파지토리 내에 README.md 파일 생성하고 아래의 가이드라인과 작성팁을 참고하여 README.md 파일을 작성하세요. (이 레파지토리의 SAMPLE_README.md 참조)
-- 레파지토리 내에 docs 디렉토리를 생성하고 docs 디렉토리 내에는 과제 수행 하면서 작성한 각종 보고서, 발표자료를 올려둡니다. (이 레파지토리의 docs 디렉토리 참조)
-- 그 밖에 레파지토리의 폴더 구성은 과제 결과물에 따라 자유롭게 구성하되 가급적 코드의 목적이나 기능에 따라 디렉토리를 나누어 구성하세요.
+### Necessity & Expected Impact
+
+[cite_start]This project was born from the need to solve these issues by creating a truly personalized, adaptive, and intelligent travel planning assistant.[cite_start]The expected impact is a revolutionary travel planning experience where users can receive a practical, enjoyable, and customized itinerary in seconds, eliminating hours of manual research and preventing common travel frustrations like inefficient travel between locations.[cite_start]Our system promotes a more immersive and eco-friendly way to travel by creating walkable daily plans.
 
 ---
 
-## 3. 레파지토리 제출 
+## 🚀 Goals (개발 목표)
 
-- **`[주의]` 레파지토리 제출**은 해당 레파지토리의 ownership을 **학과 계정**으로 넘기는 것이므로 되돌릴 수 없습니다.
-- **레파지토리 제출** 전, 더 이상 수정 사항이 없는지 다시 한번 확인하세요.
-- github 레파지토리에서 Settings > General > Danger zone > Transfer 클릭
-  <img src="https://github.com/user-attachments/assets/cb2361d4-e07e-4b5d-9116-aa80dddd8a8b" alt="소유주 변경 경로" width="500" />
-  
-- [ Specify an organization or username ]에 'PNUCSE'를 입력하고 확인 메세지를 입력하세요.
-  <img src="https://github.com/user-attachments/assets/7c63955d-dcfe-4ac3-bdb6-7d2620575f3a" alt="소유주 변경" width="400" />
+### Overall Objective & Features
+
+[cite_start]The primary goal was to create a holistic, end-to-end travel planning ecosystem. This was broken down into two main components:
+
+1.  [cite_start]**A Comprehensive User Application**: A secure and responsive web app built with React, featuring a full authentication system, user profiles, and the ability to create and share personal travel journals and reviews.
+2.  **An AI Recommendation & Itinerary Service**: A powerful backend service that can:
+    * [cite_start]Achieve a deep semantic understanding of a user's free-text travel queries. 
+    * [cite_start]Generate dynamic recommendations ranked by semantic similarity, weather, operating hours, and proximity.
+    * [cite_start]Automatically assemble recommendations into coherent, walkable daily schedules by clustering activities.
+    * [cite_start]Satisfy non-negotiable user requests (e.g., "I must visit this museum") using constraint optimization.
+
+### Differentiation vs. Similar Services
+
+| Platform | Common Limitation | Our Solution |
+| :--- | :--- | :--- |
+| **TripAdvisor** | [cite_start]Recommendations are based on broad popularity, not personal context.| [cite_start]**Deep Semantic Understanding:** Our AI understands the nuance behind queries like "quiet and cozy," matching it to rich, AI-generated location descriptions. |
+| **Wanderlog** | [cite_start]The initial discovery and logistical clustering of places is left to the user.| [cite_start]**Automated Discovery & Clustering:** Our system proactively discovers the best cluster of relevant places in a single neighborhood, creating an optimal itinerary from scratch. |
+| **Expedia** | [cite_start]"Things to Do" sections are static and context-unaware (e.g., suggesting a park in the rain). | [cite_start]**Dynamic & Time-Sensitive:** Our system integrates live weather data to provide warnings and recommends timely events like festivals or concerts.|
 
 ---
 
-## 4. README.md 가이드 라인
-- README 파일 작성시에 아래의 5가지 항목의 내용은 필수적으로 포함해야 합니다.
-- 아래의 항목이외에 프로젝트의 이해를 돕기 위한 내용을 추가해도 됩니다.
-- SAMPLE_README.md 이 단순한 형태의 예제이니 참고하세요.
+## 🏗️ System Design (시스템 설계)
 
-```markdown
-### 1. 프로젝트 배경
-#### 1.1. 국내외 시장 현황 및 문제점
-> 시장 조사 및 기존 문제점 서술
+### Architecture Diagram
 
-#### 1.2. 필요성과 기대효과
-> 왜 이 프로젝트가 필요한지, 기대되는 효과 등
+Our system is split into two main phases: an **Offline Preparation Phase** for data processing and a **Real-time Online Recommendation Phase** to handle user requests.
 
-### 2. 개발 목표
-#### 2.1. 목표 및 세부 내용
-> 전체적인 개발 목표, 주요 기능 및 기획 내용
+**1. Offline Data Processing & Indexing**
 
-#### 2.2. 기존 서비스 대비 차별성 
-> 유사 서비스 비교 및 차별점 부각
+This phase transforms raw location data into a highly optimized format for semantic search.
+1.  [cite_start]**Data Enrichment**: Raw location data is enriched using the Kakao Maps API (for coordinates) and Google Gemini API (for generating rich, descriptive paragraphs). [cite: 133, 135, 179]
+2.  [cite_start]**Embedding Generation**: The AI-generated descriptions are converted into 384-dimension numerical vectors (embeddings) using Sentence Transformers. [cite: 150, 153]
+3.  **Vector Indexing**: The embeddings are indexed using Facebook AI Similarity Search (FAISS) for near-instantaneous search. [cite_start]We use an `IndexFlatIP` optimized for cosine similarity. [cite: 158, 172, 175]
 
-#### 2.3. 사회적 가치 도입 계획 
-> 프로젝트의 공공성, 지속 가능성, 환경 보호 등
-### 3. 시스템 설계
-#### 3.1. 시스템 구성도
-> 이미지 혹은 텍스트로 시스템 아키텍쳐 작성
->
-#### 3.2. 사용 기술
-> 프론트엔드, 백엔드, API 등 구체 기술 스택
+**2. Online Real-Time Recommendation Engine**
 
-### 4. 개발 결과
-#### 4.1. 전체 시스템 흐름도
-> 기능 흐름 설명 및 도식화 가능
->
-#### 4.2. 기능 설명 및 주요 기능 명세서
-> 주요 기능에 대한 상세 설명, 각 기능의 입력/출력 및 설명
->
-#### 4.3. 디렉토리 구조
->
-#### 4.4. 산업체 멘토링 의견 및 반영 사항
-> 멘토 피드백과 적용한 사례 정리
+This is the live FastAPI microservice that generates itineraries.
+1.  [cite_start]**Query Deconstruction**: A complex user query is broken down into semantic chunks (e.g., "luxurious italian restaurant," "jazz club"). [cite: 209]
+2.  [cite_start]**Candidate Retrieval**: FAISS retrieves the top-k most semantically similar locations for each sub-query. [cite: 216]
+3.  **Multi-Factor Reranking**: Candidates are scored and filtered based on geographic cohesion to ensure a walkable itinerary. [cite_start]A final score is calculated based on semantic similarity, distance, and operating hours. [cite: 223, 227]
+4.  **Itinerary Optimization**: A hybrid planner assembles the final schedule. [cite_start]A Beam Search heuristic is used by default, while Google OR-Tools (CP-SAT solver) is activated to satisfy "must-have" requests. [cite: 236, 245]
+5.  **Finalization & Delivery**: The itinerary is checked against weather data. [cite_start]The structured plan is sent immediately to the user via WebSocket, followed by an AI-generated summary paragraph from the Gemma 3 API. [cite: 261, 264, 265, 269]
 
-### 5. 설치 및 실행 방법
->
-#### 5.1. 설치절차 및 실행 방법
-> 설치 명령어 및 준비 사항, 실행 명령어, 포트 정보 등
-#### 5.2. 오류 발생 시 해결 방법
-> 선택 사항, 자주 발생하는 오류 및 해결책 등
+### Technologies Used
 
-### 6. 소개 자료 및 시연 영상
-#### 6.1. 프로젝트 소개 자료
-> PPT 등
-#### 6.2. 시연 영상
-> 영상 링크 또는 주요 장면 설명
+| Category | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Frontend** | React, Vite, Tailwind CSS, Material UI | [cite_start]Building a responsive, modern, and intuitive single-page application (SPA). [cite: 311, 313, 314] |
+| **Backend** | Django, Django Rest Framework | [cite_start]Core application logic, user authentication (JWT), database management, and REST APIs for journals/reviews. [cite: 77, 78] |
+| **AI Service** | FastAPI | [cite_start]High-performance, asynchronous microservice for handling AI-intensive recommendation tasks. [cite: 207] |
+| **Database** | PostgreSQL | [cite_start]Relational database for storing user data, locations, trips, and journals. [cite: 80] |
+| **AI & ML** | Sentence Transformers, FAISS, Google OR-Tools | [cite_start]Semantic search, high-speed vector indexing, and constraint satisfaction for itinerary optimization. [cite: 148, 158, 233] |
+| **LLMs / APIs**| Google Gemini, OpenAI Gemma 3, OpenWeatherMap | [cite_start]AI-powered data enrichment, itinerary summarization, and real-time weather data. [cite: 133, 259] |
 
-### 7. 팀 구성
-#### 7.1. 팀원별 소개 및 역할 분담
->
-#### 7.2. 팀원 별 참여 후기
-> 개별적으로 느낀 점, 협업, 기술적 어려움 극복 사례 등
+---
 
-### 8. 참고 문헌 및 출처
+## ✨ Results (개발 결과)
 
-```
+### Overall System Flow
 
-## 5. README.md 작성팁 
-* 마크다운 언어를 이용해 README.md 파일을 작성할 때 참고할 수 있는 마크다운 언어 문법을 공유합니다.  
-* 다양한 예제와 보다 자세한 문법은 [이 문서](https://www.markdownguide.org/basic-syntax/)를 참고하세요.
+The final platform provides a seamless user experience. [cite_start]A guest user can visit the landing page and immediately generate an itinerary by providing a natural language query. [cite: 319] [cite_start]Registered users gain access to a full dashboard where they can manage their profiles, create detailed travel journals with photo uploads, and write reviews. [cite: 320, 326] [cite_start]The system successfully generates high-quality, relevant, and logistically sound itineraries with an average latency of ~5-10 seconds. [cite: 367, 373]
 
-### 5.1. 헤더 Header
-```
-# This is a Header 1
-## This is a Header 2
-### This is a Header 3
-#### This is a Header 4
-##### This is a Header 5
-###### This is a Header 6
-####### This is a Header 7 은 지원되지 않습니다.
-```
-<br />
+### Mentor Feedback & Applied Changes
 
-### 5.2. 인용문 BlockQuote
-```
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
-```
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
-<br />
+Mentor feedback was critical in shaping the project's final architecture. The initial plan to use a traditional ML model trained on synthetic data was identified as a major risk.
 
-### 5.3. 목록 List
-* **Ordered List**
-```
-1. first
-2. second
-3. third  
-```
-1. first
-2. second
-3. third
-<br />
+> [cite_start]**Key Feedback**: "Concerns about the risks and lack of mitigation strategies for using synthetic data." [cite: 381]
 
-* **Unordered List**
-```
-* 하나
-  * 둘
+[cite_start]**Our Response**: We executed a major pivot, re-architecting the entire system around a state-of-the-art **semantic search engine**. [cite: 351] [cite_start]This eliminated the need for risky synthetic data and resulted in a more powerful, modern, and scalable system. [cite: 354] [cite_start]Other changes included implementing Google OR-Tools for robust optimization and adopting a "walkable-first" philosophy to promote eco-friendly travel. [cite: 387, 388]
 
-+ 하나
-  + 둘
-
-- 하나
-  - 둘
-```
-* 하나
-  * 둘
-
-+ 하나
-  + 둘
-
-- 하나
-  - 둘
-<br />
-
-### 5.4. 코드 CodeBlock
-* 코드 블럭 이용 '``'
-```
-여러줄 주석 "```" 이용
-"```
-#include <stdio.h>
-int main(void){
-  printf("Hello world!");
-  return 0;
-}
-```"
-
-단어 주석 "`" 이용
-"`Hello world`"
-
-* 큰 따움표(") 없이 사용하세요.
-``` 
-<br />
-
-### 5.5. 링크 Link
-```
-[Title](link)
-[부산대학교 정보컴퓨터공학부](https://cse.pusan.ac.kr/cse/index..do)
-
-<link>
-<https://cse.pusan.ac.kr/cse/index..do>
-``` 
-[부산대학교 정보컴퓨터공학부](https://cse.pusan.ac.kr/cse/index..do)
-
-<https://cse.pusan.ac.kr/cse/index..do>
-<br />
-
-### 5.6. 강조 Highlighting
-```
-*single asterisks*
-_single underscores_
-**double asterisks**
-__double underscores__
-~~cancelline~~
-```
-*single asterisks* <br />
-_single underscores_ <br />
-**double asterisks** <br />
-__double underscores__ <br />
-~~cancelline~~  <br />
-<br />
-
-### 5.7. 이미지 Image
-```
-<img src="image URL" width="600px" title="Title" alt="Alt text"></img>
-![Alt text](image URL "Optional title")
-```
-- 웹에서 작성한다면 README.md 내용 안으로 이미지를 드래그 앤 드롭하면 이미지가 생성됩니다.
-- 웹이 아닌 로컬에서 작성한다면, github issue에 이미지를 드래그 앤 드롭하여 image url 을 얻을 수 있습니다. (URL만 복사하고 issue는 제출 안 함.)
-  <img src="https://github.com/user-attachments/assets/0fe3bff1-7a2b-4df3-b230-cac4ef5f6d0b" alt="이슈에 image 올림" width="600" />
-  <img src="https://github.com/user-attachments/assets/251c6d42-b36b-4ad4-9cfa-fa2cc67a9a50" alt="image url 복사" width="600" />
-
-
-### 5.8. 유튜브 영상 추가
-```markdown
-[![영상 이름](유튜브 영상 썸네일 URL)](유튜브 영상 URL)
-[![부산대학교 정보컴퓨터공학부 소개](http://img.youtube.com/vi/zh_gQ_lmLqE/0.jpg)](https://www.youtube.com/watch?v=zh_gQ_lmLqE)    
-```
-[![부산대학교 정보컴퓨터공학부 소개](http://img.youtube.com/vi/zh_gQ_lmLqE/0.jpg)](https://www.youtube.com/watch?v=zh_gQ_lmLqE)    
-
-- 이때 유튜브 영상 썸네일 URL은 유투브 영상 URL로부터 다음과 같이 얻을 수 있습니다.
-
-- `Youtube URL`: https://www.youtube.com/watch?v={동영상 ID}
-- `Youtube Thumbnail URL`: http://img.youtube.com/vi/{동영상 ID}/0.jpg 
-- 예를 들어, https://www.youtube.com/watch?v=zh_gQ_lmLqE 라고 하면 썸네일의 주소는 http://img.youtube.com/vi/zh_gQ_lmLqE/0.jpg 이다.
-
+### Directory Structure

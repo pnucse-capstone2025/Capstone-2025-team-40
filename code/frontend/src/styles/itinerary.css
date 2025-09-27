@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+@import "react-datepicker/dist/react-datepicker.css";
+@import "leaflet/dist/leaflet.css";
+
+#root {
+  width: 100%;
+  max-width: none;
+}
+
+/* =============================================== */
+/* ## BASE & GLOBAL STYLES ## */
+/* =============================================== */
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #FFFBF6 !important;
+}
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #343a40;
+  background-color: #FFFBF6;
+}
+
+/* =============================================== */
+/* ## ITINERARY PAGE LAYOUT ## */
+/* =============================================== */
+
+.itinerary-main-content {
+  display: flex;
+  height: 95vh;
+  max-height: 950px;
+  width: 100%;
+}
+
+.image-col {
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 100%;
+}
+
+.image-col .leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.page-title-container {
+  padding: 4rem 4rem 4rem 4rem;
+}
+
+.main-title {
+  font-weight: 900;
+  font-size: 4rem;
+  line-height: 1.1;
+  color: #212529;
+  margin-bottom: 0;
+}
+
+.itinerary-card {
+  background-color: #FFFBF6 !important;
+  overflow: visible;
+  border-radius: 0;
+}
+
+/* CHANGED: Removed right padding to allow scrollbar to sit at the edge */
+.itinerary-card .card-body {
+  padding: 4rem 0 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.lower-section {
+  padding: 4rem;
+  background-color: #FFFBF6;
+}
+
+.summary-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #343a40;
+  font-weight: 700 !important;
+}
+
+.info-card {
+  background-color: transparent !important;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #343a40;
+  font-weight: 700;
+}
+
+/* =============================================== */
+/* ## ITINERARY COMPONENTS ## */
+/* =============================================== */
+
+.itinerary-list-col {
+  height: 100%;
+}
+
+.itinerary-items-container {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-bottom: 5rem;
+  /* CHANGED: Added right padding here to keep text aligned correctly */
+  padding-right: 4rem;
+}
+
+/* NEW: Minimalistic scrollbar styles */
+.itinerary-items-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.itinerary-items-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.itinerary-items-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.itinerary-items-container::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+.itinerary-item {
+  padding: 0.3rem 1rem;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+}
+
+/* Add the border-radius property here */
+.itinerary-item:hover {
+  background-color: #f8f5f0;
+  border-radius: 10px; /* Adjust the value for more or less rounding */
+}
+
+.itinerary-item .itinerary-number {
+  font-size: 1.25rem;
+  color: #6c757d;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.itinerary-item .itinerary-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0rem;
+}
+
+.itinerary-item .itinerary-hours {
+  font-size: 1.3rem;
+  color: #6c757d;
+  white-space: nowrap;
+}
+
+.itinerary-item .itinerary-description {
+  display: block;
+  visibility: visible;
+  font-size: 1rem;
+  color: #495057;
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
+.day-navigator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 4rem;
+  background-color: #FFFBF6;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #6c757d;
+  border-top: 1px solid #eee;
+}
+
+.day-navigator .day-arrow {
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.day-navigator .day-arrow:hover:not(:disabled) {
+  color: #212529;
+}
+
+.day-navigator .day-arrow:disabled {
+  color: #ced4da;
+  cursor: not-allowed;
+}
+
+.weather-panel {
+  background-color: transparent !important;
+}
+
+.weather-forecast-title {
+  font-weight: 900;
+  text-align: right;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #212529;
+}
+
+.weather-forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.weather-card {
+  background-color: #FFFBF6 !important;
+  border-radius: 1.5rem !important;
+  padding: 1.5rem 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.weather-day {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #6c757d !important;
+  margin-bottom: 0.5rem;
+}
+
+.weather-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0.5rem 0;
+}
+
+.weather-temp {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #212529;
+}
+
+/* =============================================== */
+/* ## ANIMATIONS ## */
+/* =============================================== */
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-title {
+  animation-name: slideInFromLeft;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.animate-card {
+  animation-name: fadeInUp;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.animate-weather-day {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* =============================================== */
+/* ## RESPONSIVE STYLES ## */
+/* =============================================== */
+
+@media (max-width: 768px) {
+  .itinerary-main-content {
+      height: auto;
+      flex-direction: column;
+  }
+
+  .itinerary-list-col {
+      height: auto;
+      max-height: 60vh;
+  }
+
+  .itinerary-card .card-body {
+    position: static;
+    /* Revert padding for mobile */
+    padding: 2rem;
+  }
+  .day-navigator {
+    position: static;
+    border-top: none;
+    padding: 2rem 0 0 0;
+  }
+  .itinerary-items-container {
+    padding-bottom: 0;
+    /* Revert padding for mobile */
+    padding-right: 0;
+  }
+
+
+  .image-col {
+      height: 400px;
+  }
+
+  .page-title-container {
+    padding: 2rem;
+  }
+  .main-title {
+    font-size: 3rem;
+  }
+  
+  .lower-section {
+    padding: 2rem;
+  }
+  .weather-forecast-title {
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 1.5rem;
+  }
+  .weather-forecast-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 0;
+  }
+  .weather-card {
+    padding: 1rem 0.25rem;
+    border-radius: 1rem !important;
+  }
+  .weather-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .weather-temp {
+    font-size: 1.1rem;
+  }
+}

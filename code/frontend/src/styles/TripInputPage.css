@@ -1,0 +1,114 @@
+/* Styles for a warm, black & white, centered Trip Input Page */
+
+#root {
+  width: 100%;
+  max-width: none;
+}
+
+:root {
+  --warm-bg: #FDF8F0; /* Warm, creamy off-white for the page background */
+  --pure-white: #FFFFFF;
+  --strong-black: #1C1C1C;
+  --light-gray: #F7F7F7; /* For input backgrounds and info boxes */
+  --border-radius: 0.5rem;
+}
+
+.trip-input-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: var(--warm-bg);
+}
+
+.trip-input-content {
+  width: 100%;
+  max-width: 800px;
+}
+
+.trip-form-container {
+  padding-bottom: 2rem;
+}
+
+.trip-form-title {
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: var(--strong-black);
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.trip-form-card {
+  background-color: var(--pure-white);
+  overflow: hidden;
+  border-radius: var(--border-radius) !important;
+  border: none; /* No border on the card */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08); /* A soft, modern shadow */
+}
+
+.trip-form-card .card-body {
+  padding: 3rem;
+}
+
+/* --- Form Element Styling --- */
+
+.trip-form-card .form-label {
+  color: var(--strong-black);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.trip-form-card .form-control {
+  background-color: var(--light-gray);
+  border: none; /* No borders on inputs */
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+}
+
+/* Remove the default blue glow on focus */
+.trip-form-card .form-control:focus {
+  background-color: var(--light-gray);
+  box-shadow: none;
+  outline: 2px solid var(--strong-black);
+}
+
+/* Custom button styles */
+.btn-primary {
+  background-color: var(--strong-black) !important;
+  border-color: var(--strong-black) !important;
+  font-weight: 600;
+  padding: 0.8rem !important;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-outline-secondary {
+  border-color: #e0e0e0 !important;
+  color: var(--strong-black) !important;
+  font-weight: 600;
+}
+.btn-outline-secondary:hover {
+  background-color: var(--light-gray) !important;
+}
+
+/* Instructions box */
+.instructions-box {
+  background-color: var(--light-gray);
+  border: none;
+}
+
+
+@media (max-width: 768px) {
+  .trip-form-title {
+    font-size: 2.5rem;
+  }
+  .trip-form-card .card-body {
+    padding: 1.5rem;
+  }
+}
