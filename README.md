@@ -97,10 +97,24 @@ The final platform provides a seamless user experience. A guest user can visit t
 
 ### Mentor Feedback & Applied Changes
 
-Mentor feedback was critical in shaping the project's final architecture. The initial plan to use a traditional ML model trained on synthetic data was identified as a major risk.
+The mentor's interim feedback was pivotal and drove a significant and beneficial architectural evolution for the project. The team directly addressed every piece of feedback, leading to a more robust, scalable, and trustworthy system.
 
-> **Key Feedback**: "Concerns about the risks and lack of mitigation strategies for using synthetic data."
+#### **Concern 1: The Risk of Synthetic Data**
 
-**Our Response**: We executed a major pivot, re-architecting the entire system around a state-of-the-art **semantic search engine**. This eliminated the need for risky synthetic data and resulted in a more powerful, modern, and scalable system.Other changes included implementing Google OR-Tools for robust optimization and adopting a "walkable-first" philosophy to promote eco-friendly travel.
+* **Mentor's Feedback**: The mentor expressed significant concerns about the initial plan to use a traditional machine learning model on synthetic user data. This approach was flagged as risky, as the synthetic data might not reflect real-world user nuances, potentially leading to poor recommendations.
+* **Our Response**: Acknowledging this critical risk, the team made the pivotal decision to completely abandon the synthetic data model and re-architect the system around an AI-powered semantic search engine. This new approach derives its intelligence directly from the rich, descriptive content of the locations themselves, completely eliminating the need for and risks of synthetic data
+
+#### **Concern 2: Simplistic Itinerary Logic**
+
+* **Mentor's Feedback**: The initial itinerary plan was considered too broad and lacked a robust optimization model to handle real-world constraints like business hours.
+* **Our Response**: A sophisticated, dual-mode planner was implemented to create practical and coherent schedules.
+    * **Heuristics**: A **Beam Search** algorithm is used as the default planner to build high-quality schedules step-by-step.
+    * **Constraint Solving**: For "must-have" user requests, the system activates **Google OR-Tools (CP-SAT solver)**, a powerful constraint programming tool that can guarantee user requirements are met.
+    * This was combined with a "walkable-first" philosophy, where the system prioritizes clustering all daily activities in a single region to promote eco-friendly travel and make traffic data irrelevant.
+
+#### **Concern 3: Lack of a Clear Real-Time Strategy & Trustworthiness**
+
+* **Mentor's Feedback**: The project needed a clearer strategy for real-time implementation to ensure low latency, as well as measures to strengthen the system's trustworthiness for the end-user.
+* **Our Response**: The team designed a distinct offline/online processing architecture to achieve high performance. The online, real-time request flow (pictured below) leverages a pre-built, high-speed **FAISS index** for near-instantaneous candidate retrieval, forming a clear and effective strategy for low-latency performance. To build user trust, the system now provides transparent weather warnings and includes direct links to each location's official website and Naver Maps URL for easy verification.
 
 ### Directory Structure
