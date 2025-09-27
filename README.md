@@ -46,13 +46,13 @@ The primary goal was to create a holistic, end-to-end travel planning ecosystem.
 ### Social value / sustainability aspects
 The project was designed with a core "walkable-first" philosophy that provides significant social and sustainability benefits.
 
-### Eco-Friendly by Design
+# Eco-Friendly by Design
 The system's primary goal is to cluster all of a day's activities within a single geographic region. This design choice inherently promotes eco-friendly travel by minimizing the need for carbon-intensive transportation (like taxis or buses) between points of interest. It directly solves the problem of inefficient routing that plagues traditional travel planning.
 
-### Deeper Cultural Immersion
+# Deeper Cultural Immersion
 By creating walkable itineraries, the system encourages tourists to explore neighborhoods on foot. This fosters a more immersive and authentic travel experience, allowing visitors to discover local shops, side streets, and communities they would otherwise miss, leading to a deeper appreciation of the destination.
 
-### Supporting Local Culture
+# Supporting Local Culture
 The system is designed to be time-sensitive, allowing it to recommend temporary local events like concerts and festivals. This feature adds social value by directing tourists to unique cultural happenings, helping to support local artists and event organizers.
 
 ---
