@@ -143,3 +143,17 @@ The mentor's interim feedback was pivotal and drove a significant and beneficial
 * **Our Response**: The team designed a distinct offline/online processing architecture to achieve high performance. The online, real-time request flow (pictured below) leverages a pre-built, high-speed **FAISS index** for near-instantaneous candidate retrieval, forming a clear and effective strategy for low-latency performance. To build user trust, the system now provides transparent weather warnings and includes direct links to each location's official website and Naver Maps URL for easy verification.
 
 ## Installation/Run Guide (설치 및 실행 방법)
+To start the frontend development server, navigate to the frontend directory in your terminal and run the following command. The server will typically be available at `http://localhost:3000` or a similar address.
+
+```bash
+npm run dev
+
+Follow these steps in order to set up the virtual environment and run the Django backend server. The server will usually start on http://localhost:8000.
+
+| Step | Description | macOS / Linux Command | Windows Command |
+| :--- | :--- | :--- | :--- |
+| **1.** | **Create Virtual Environment** | `python3 -m venv env` | `python -m venv env` |
+| **2.** | **Activate Environment** | `source env/bin/activate` | `.\env\Scripts\activate` |
+| **3.** | **Install Dependencies** | `pip install -r requirements.txt` | `pip install -r requirements.txt` |
+| **4.** | **Database Migrations** | `python manage.py makemigrations`<br>`python manage.py migrate` | `python manage.py makemigrations`<br>`python manage.py migrate` |
+| **5.** | **Run the Server** | `python manage.py runserver` | `python manage.py runserver` |
