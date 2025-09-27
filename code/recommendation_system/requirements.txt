@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+pandas
+ortools
+openai
+faiss-cpu
+numpy
+psycopg2-binary
+sentence-transformers
+requests
+websockets
+supabase
+PyJWT
