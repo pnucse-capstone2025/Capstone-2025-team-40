@@ -60,7 +60,7 @@ This phase transforms raw location data into a highly optimized format for seman
 2.  **Embedding Generation**: The AI-generated descriptions are converted into 384-dimension numerical vectors (embeddings) using Sentence Transformers.
 3.  **Vector Indexing**: The embeddings are indexed using Facebook AI Similarity Search (FAISS) for near-instantaneous search. We use an `IndexFlatIP` optimized for cosine similarity.
 
-![Project Logo](images\diagram1.png)
+(images\diagram1.png)
 
 
 **2. Online Real-Time Recommendation Engine**
@@ -72,7 +72,7 @@ This is the live FastAPI microservice that generates itineraries.
 4.  **Itinerary Optimization**: A hybrid planner assembles the final schedule. A Beam Search heuristic is used by default, while Google OR-Tools (CP-SAT solver) is activated to satisfy "must-have" requests.
 5.  **Finalization & Delivery**: The itinerary is checked against weather data. The structured plan is sent immediately to the user via WebSocket, followed by an AI-generated summary paragraph from the Gemma 3 API.
 
-![Project Logo](images\diagram2.png)
+(images\diagram2.png)
 
 ### Technologies Used
 
