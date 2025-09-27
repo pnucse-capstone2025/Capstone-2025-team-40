@@ -135,16 +135,16 @@ def generate_and_save_embeddings(db_params, api_key):
     print(f"Embeddings matrix shape: {location_embeddings.shape}")
 
 if __name__ == '__main__':
-    GEMINI_API_KEY = "AIzaSyBwMSL341arzL_FxPzy_DvhDl4Jc46DlaY"
+    GEMINI_API_KEY = ""
 
     if GEMINI_API_KEY == "YOUR_API_KEY_HERE":
         print("ERROR: Please replace 'YOUR_API_KEY_HERE' with your actual Gemini API key.")
     else:
         db_connection_params = {
-            "host": "localhost",
-            "database": "recommendation_locations",
-            "user": "postgres",
-            "password": "nafikova03",
-            "port": "5432"
+            "host": "",
+            "database": "",
+            "user": "",
+            "password": "",
+            "port": ""
         }
         generate_and_save_embeddings(db_connection_params, GEMINI_API_KEY)
