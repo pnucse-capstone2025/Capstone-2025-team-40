@@ -4,6 +4,8 @@
 
 An intelligent travel planning assistant that generates personalized, adaptive, and logistically sound itineraries based on natural language queries. This project moves beyond generic "Top 10" lists to create truly unique travel experiences.
 
+## Schedulane Live Website  
+[Schedulane live website](https://brave-sky-0752b1e00.2.azurestaticapps.net/)
 ---
 
 ## Background (프로젝트 배경)
